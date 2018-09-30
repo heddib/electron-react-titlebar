@@ -1,8 +1,9 @@
 #electron-app-title-bar {
+  z-index: 999;
   height: 28px;
   /* background: #24292e; */
   background: transparent;
-  border-bottom: 1px solid #000;
+  border-bottom: transparent;
   -webkit-app-region: drag;
   flex-grow: 0;
   flex-shrink: 0;
