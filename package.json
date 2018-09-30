@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-titlebar",
+  "name": "luna-react-titlebar",
   "version": "0.8.1",
   "description": "A github desktop style title bar component for electron.",
   "main": "index.js",
@@ -9,21 +9,15 @@
     "prepublish": "babel src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "KochiyaOcean",
+  "author": "heddib",
   "license": "MIT",
-  "keywords": [
-    "electron",
-    "react",
-    "titlebar",
-    "title"
-  ],
-  "homepage": "https://github.com/KochiyaOcean/electron-react-titlebar",
+  "homepage": "https://github.com/heddib/electron-react-titlebar",
   "repository": {
-    "url": "https://github.com/KochiyaOcean/electron-react-titlebar"
+    "url": "https://github.com/heddib/electron-react-titlebar"
   },
   "bugs": {
-    "url": "https://github.com/KochiyaOcean/electron-react-titlebar/issues",
-    "email": "root@kochiyaocean.org"
+    "url": "https://github.com/heddib/electron-react-titlebar/issues",
+    "email": "heddi932@gmail.com"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
