@@ -1,6 +1,6 @@
 {
   "name": "luna-react-titlebar",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "A github desktop style title bar component for electron.",
   "main": "index.js",
   "types": "index.d.ts",
