@@ -38,7 +38,7 @@ export class WindowControls extends Component {
             <path d={isMaximized? "m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" : "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"} />
           </svg>
         </button>
-        <button aria-label="settings" tabIndex="-1" className="window-control window-settings" disabled={!(settings != null)}
+        <button aria-label="settings" tabIndex="-1" className="window-control window-minimize" disabled={!(settings != null)}
           onClick={e => this.props.settings.show()}>
           <svg aria-hidden="true" version="1.1" width="10" height="10">
             <path d={isMaximized? "m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" : "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"} />
