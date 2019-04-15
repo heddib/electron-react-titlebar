@@ -28,7 +28,7 @@ module.exports = {
   'rules': {
     'comma-dangle': ['error', 'always-multiline'],
     'indent': ['warn', 2],
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': 'off',
     'no-console': ['warn', {'allow': ['warn', 'error']}],
     'no-var': 'error',
     'no-unused-vars': ['warn', {'args': 'none'}],

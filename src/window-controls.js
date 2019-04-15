@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Settings } from './settings'
 import { remote } from 'electron'
 import PropTypes from 'prop-types'
 
@@ -6,10 +7,12 @@ export class WindowControls extends Component {
   static propTypes = {
     disableMinimize: PropTypes.bool,
     disableMaximize: PropTypes.bool,
+    settings: PropTypes.element,
     currentWindow: PropTypes.object,
   }
   static defaultProps = {
     currentWindow: remote.getCurrentWindow(),
+    settings: <Settings />,
   }
   state = {
     isMaximized: this.props.currentWindow.isMaximized(),
@@ -19,7 +22,7 @@ export class WindowControls extends Component {
     this.props.currentWindow.addListener('unmaximize', e => this.setState({ isMaximized: false }))
   }
   render() {
-    const { disableMaximize, disableMinimize } = this.props
+    const { disableMaximize, disableMinimize, settings } = this.props
     const { isMaximized } = this.state
     return (
       <div className="window-controls">
@@ -31,6 +34,12 @@ export class WindowControls extends Component {
         </button>
         <button aria-label="maximize" tabIndex="-1" className="window-control window-maximize" disabled={disableMaximize}
           onClick={e => this.props.currentWindow.isMaximizable() ? this.props.currentWindow.isMaximized() ? this.props.currentWindow.unmaximize() : this.props.currentWindow.maximize() : null}>
+          <svg aria-hidden="true" version="1.1" width="10" height="10">
+            <path d={isMaximized? "m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" : "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"} />
+          </svg>
+        </button>
+        <button aria-label="settings" tabIndex="-1" className="window-control window-settings" disabled={!(settings != null)}
+          onClick={e => this.props.settings.show()}>
           <svg aria-hidden="true" version="1.1" width="10" height="10">
             <path d={isMaximized? "m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5 -5,0 z m -2,2 6,0 0,6 -6,0 z" : "M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"} />
           </svg>
